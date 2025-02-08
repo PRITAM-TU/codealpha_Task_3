@@ -6,6 +6,7 @@
     font-family: Arial, sans-serif;
     scroll-behavior: smooth;
     font-family: "Bree Serif", serif;
+    white-space: normal;
 }
 
 /* Navigation Bar */
@@ -290,5 +291,6 @@ footer {
         font-size: 14px;
         padding: 5px 15px; /* Minimal padding for smaller screens */
     }
+   
 }
 
