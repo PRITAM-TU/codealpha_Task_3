@@ -8,6 +8,39 @@
     font-family: "Bree Serif", serif;
     white-space: normal;
 }
+body {
+
+    margin: 0;
+    padding: 0px;
+    overflow-x: hidden;}
+    html, body {
+     
+        scroll-behavior: smooth;
+         scroll-snap-type: y; 
+      }
+      
+     
+      @media (max-width: 500px) {
+        html, body {
+        overflow-x: hidden;
+        }
+      }
+ @media (max-width:430px)
+ {
+   nav{
+
+    font-size: 22px;
+     /* Reduce spacing for medium screens */
+   }
+   .logo{
+    font-size: 22px;
+
+   }
+   .logo span{
+    font-size: 10vw;
+   }
+}
+    
 
 /* Navigation Bar */
 header {
