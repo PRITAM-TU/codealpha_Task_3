@@ -284,7 +284,7 @@ nav ul li a:hover::after {
     font-size: 28px;
     font-family: "Rubik Wet Paint", serif;
     background: linear-gradient(90deg, #df98b4, #a76094);
-    -webkit-background-clip: text;
+    -webkit-background-clip:text;
     -webkit-text-fill-color: transparent;
     position: relative;
     padding-bottom: 10px;
