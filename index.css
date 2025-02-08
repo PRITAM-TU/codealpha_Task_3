@@ -82,9 +82,39 @@ nav ul li a {
 
     font-size: 24px;
 }
-nav ul li a:hover{
+nav ul li a {
+    position: relative;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 24px;
+    padding: 5px 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Underline animation */
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -3px;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #cdb6e3, #c9d5eb);
+    transition: width 0.4s ease-in-out, left 0.4s ease-in-out;
+}
+
+/* Hover effect */
+nav ul li a:hover {
     cursor: pointer;
-    text-decoration: underline;
+    color: #bab2dd;
+    text-shadow: 0px 0px 8px rgba(255, 154, 158, 0.6);
+}
+
+/* Expand underline on hover */
+nav ul li a:hover::after {
+    width: 100%;
+    left: 0;
 }
 
 
@@ -92,14 +122,15 @@ nav ul li a:hover{
 
 
 /* Hero Section */
-@keyframes fadeInUp {
+
+@keyframes slideInLeft {
     from {
+        transform: translateX(-100%);
         opacity: 0;
-        transform: translateY(50px);
     }
     to {
+        transform: translateX(0);
         opacity: 1;
-        transform: translateY(0);
     }
 }
 
@@ -121,19 +152,68 @@ nav ul li a:hover{
 .hero span {
     color: #8eb1c8;
     display: inline-block;
-    animation: fadeInUp 3s ease-in-out;
+    animation: slideInLeft 5s ease-in-out;
     font-family: "Parkinsans", serif;
+    
 }
 
 .btn {
     display: inline-block;
     margin-top: 10px;
-    padding: 10px 20px;
-    background: #752929;
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #b1a8a8, #a94444);
     color: white;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 1px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.5s ease-in-out;
+    animation: fadeInScale 1s ease-in-out;
+    position: relative;
+    overflow: hidden;
 }
+
+/* Glow effect and bounce on hover */
+.btn:hover {
+    transform: scale(1.1);
+    background: linear-gradient(135deg, #a94444, #752929);
+    box-shadow: 0px 5px 15px rgba(117, 41, 41, 0.4);
+}
+
+/* Keyframe for smooth fade-in with scale */
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Ripple Effect */
+.btn::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: width 0.5s ease, height 0.5s ease, opacity 0.5s ease;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+
+.btn:hover::before {
+    width: 0%;
+    height: 0%;
+    opacity: 1;
+}
+
 
 /* Sections */
 .about, .projects, .contact {
@@ -157,37 +237,86 @@ nav ul li a:hover{
     }
 }
 
+/* Section Styling */
 .about {
-    background: #82889a;
+    background: linear-gradient(135deg, #4e4f69, #82889a);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
     color: white;
     height: 50vh;
-
-    /* Apply animation when the section loads */
-    animation: fadeInUp 1.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    /* Entrance Animation */
+    animation: fadeInUp  ease-in-out, floating  infinite alternate ease-in-out;
 }
 
+/* Smooth Floating Animation */
+@keyframes floating {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(10px);
+    }
+}
+
+/* Text Animation */
 .about p {
     font-size: 20px;
-    padding: 13px 168px 1px 231px;
-    font-family: "Liter", serif;
+    padding: 15px 15%;
     font-family: "Parkinsans", serif;
+    
+    /* Interactive Hover Effect */
+    transition: transform 0.1s ease-in-out, color 0.3s ease-in-out;
+}
+.about p:hover {
+    transform: scale(1.05);
+    color: #04090a;
+}
 
-    /* Smooth transition for hover effect */
-    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
-}
-.about h2{
-    color: black;
-    font-size: 20px;
+/* Heading with Gradient and Underline Effect */
+.about h2 {
+    font-size: 28px;
     font-family: "Rubik Wet Paint", serif;
+    background: linear-gradient(90deg, #df98b4, #a76094);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    padding-bottom: 10px;
 }
+
+/* Underline Animation */
+.about h2::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 3px;
+    background: #d2a2e1;
+    transition: width 0.4s ease-in-out, left 0.4s ease-in-out;
+}
+
+.about h2:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Smooth Scrolling Effect */
+html {
+    scroll-behavior: smooth;
+}
+
 
 /* Hover effect for text */
 .about p:hover {
     transform: scale(1.05);
-    color: #ffeb3b;
+    color: #acdbd8;
 }
 .contact h2{
     font-family: "Rubik Wet Paint", serif;
