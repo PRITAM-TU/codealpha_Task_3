@@ -5,6 +5,7 @@
     box-sizing: border-box;
     font-family: Arial, sans-serif;
     scroll-behavior: smooth;
+    font-family: "Bree Serif", serif;
 }
 
 /* Navigation Bar */
@@ -25,9 +26,11 @@ nav {
 }
 .logo {
     font-size: 24px;
+    font-family: "Rubik Wet Paint", serif;
 }
 .logo span {
     color: #8eb1c8;
+    font-family: "Rubik Wet Paint", serif;
 }
 nav ul {
     list-style: none;
@@ -35,10 +38,12 @@ nav ul {
 }
 nav ul li {
     margin: 0 15px;
+    font-family: "Rubik Wet Paint", serif;
 }
 nav ul li a {
     color: white;
     text-decoration: none;
+    font-family: "Rubik Wet Paint", serif;
 }
 nav ul li a:hover{
     cursor: pointer;
@@ -73,12 +78,14 @@ nav ul li a:hover{
 
 .hero h1 {
     font-size: 40px;
+    font-family: "Parkinsans", serif;
 }
 
 .hero span {
     color: #8eb1c8;
     display: inline-block;
     animation: fadeInUp 3s ease-in-out;
+    font-family: "Parkinsans", serif;
 }
 
 .btn {
@@ -100,6 +107,7 @@ nav ul li a:hover{
     background-attachment: fixed;
     background-size: cover;
     color: white;
+    
 }
 @keyframes fadeInUp {
     from {
@@ -127,9 +135,16 @@ nav ul li a:hover{
 .about p {
     font-size: 20px;
     padding: 13px 168px 1px 231px;
+    font-family: "Liter", serif;
+    font-family: "Parkinsans", serif;
 
     /* Smooth transition for hover effect */
     transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+.about h2{
+    color: black;
+    font-size: 20px;
+    font-family: "Rubik Wet Paint", serif;
 }
 
 /* Hover effect for text */
@@ -137,11 +152,15 @@ nav ul li a:hover{
     transform: scale(1.05);
     color: #ffeb3b;
 }
+.contact h2{
+    font-family: "Rubik Wet Paint", serif;
+}
 
 .contact
 {
- color: white;
+    color: black;
  background: #816c83;
+ 
 }
 
 /* Projects */
@@ -154,6 +173,12 @@ nav ul li a:hover{
         opacity: 1;
         transform: scale(1);
     }
+}
+.projects h2{
+    font-family: "Rubik Wet Paint", serif;
+    color: aqua;
+    font-family: "Rubik Wet Paint", serif;
+    color: #4effff;
 }
 
 .project-card {
@@ -243,3 +268,27 @@ footer {
     text-align: center;
     padding: 10px;
 }
+/* Tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .about p {
+        font-size: 18px;
+        padding: 10px 50px; /* Reduce side padding for tablets */
+    }
+}
+
+/* Mobile devices (max-width: 768px) */
+@media (max-width: 768px) {
+    .about p {
+        font-size: 16px;
+        padding: 10px 20px; /* Further reduce padding for mobile */
+    }
+}
+
+/* Small mobile devices (max-width: 480px) */
+@media (max-width: 480px) {
+    .about p {
+        font-size: 14px;
+        padding: 5px 15px; /* Minimal padding for smaller screens */
+    }
+}
+

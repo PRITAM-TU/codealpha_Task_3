@@ -1,0 +1,23 @@
+/* Tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .about p {
+        font-size: 18px;
+        padding: 10px 50px; /* Reduce side padding for tablets */
+    }
+}
+
+/* Mobile devices (max-width: 768px) */
+@media (max-width: 768px) {
+    .about p {
+        font-size: 16px;
+        padding: 10px 20px; /* Further reduce padding for mobile */
+    }
+}
+
+/* Small mobile devices (max-width: 480px) */
+@media (max-width: 480px) {
+    .about p {
+        font-size: 14px;
+        padding: 5px 15px; /* Minimal padding for smaller screens */
+    }
+}
