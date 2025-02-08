@@ -250,6 +250,15 @@ button {
     padding: 10px;
     border: none;
     cursor: pointer;
+    border-radius: 2px;
+    box-shadow: 10px;
+    background: #000000;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0px 2px 6px #dcdcdc;
     
     /* Smooth transition for hover effect */
     transition: background 0.3s ease, transform 0.3s ease;
