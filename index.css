@@ -43,13 +43,15 @@ body {
     
 
 /* Navigation Bar */
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap');
+
 header {
     background: #222;
-    padding: 29px 0;
+    padding: 20px 0;
     text-align: center;
-    height: 87px;
-
+    border-radius: 10px;
 }
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -57,40 +59,101 @@ nav {
     max-width: 1000px;
     margin: auto;
     color: white;
+    padding: 0 20px;
 }
+
 .logo {
     font-size: 40px;
     font-family: "Rubik Wet Paint", serif;
 }
+
 .logo span {
     color: #8eb1c8;
     font-family: "Rubik Wet Paint", serif;
     font-size: 32px;
 }
+
 nav ul {
     list-style: none;
     display: flex;
 }
+
 nav ul li {
     margin: 0 15px;
     font-family: "Rubik Wet Paint", serif;
 }
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-family: "Rubik Wet Paint", serif;
 
-    font-size: 24px;
-}
 nav ul li a {
     position: relative;
     text-decoration: none;
     color: #ffffff;
+    font-family: "Rubik Wet Paint", serif;
     font-weight: bold;
     font-size: 24px;
     padding: 5px 10px;
     transition: color 0.3s ease-in-out;
 }
+
+/* HOVER EFFECT */
+nav ul li a:hover {
+    color: #8eb1c8;
+}
+
+/* HAMBURGER MENU */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle div {
+    width: 30px;
+    height: 4px;
+    background: white;
+    margin: 5px;
+    border-radius: 3px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* MOBILE RESPONSIVE DESIGN */
+@media screen and (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: rgba(34, 34, 34, 0.95);
+        text-align: center;
+        padding: 10px 0;
+        border-radius: 10px;
+    }
+
+    nav ul li {
+        margin: 15px 0;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* Animate hamburger menu */
+    .menu-toggle.open div:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    .menu-toggle.open div:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.open div:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+}
+
 
 /* Underline animation */
 nav ul li a::after {
@@ -142,6 +205,7 @@ nav ul li a:hover::after {
     background-attachment: fixed;
     background-size: cover;
     color: white;
+    border-radius: 10px;
 }
 
 .hero h1 {
@@ -224,7 +288,7 @@ nav ul li a:hover::after {
     background-attachment: fixed;
     background-size: cover;
     color: white;
-    
+    border-radius: 10px;
 }
 @keyframes fadeInUp {
     from {
@@ -328,8 +392,57 @@ html {
  background: #816c83;
  
 }
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap');
 
-/* Projects */
+.contact {
+    color: white;
+    background: linear-gradient(135deg, #816c83, #574b60);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.contact:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.contact h2 {
+    font-family: "Rubik Wet Paint", serif;
+    font-size: 2rem;
+    text-align: center;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.contact p {
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+.contact a {
+    display: inline-block;
+    background: #ffcc00;
+    color: #222;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.contact a:hover {
+    background: #ff9900;
+    color: white;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap');
+
 @keyframes fadeInScale {
     from {
         opacity: 0;
@@ -340,33 +453,74 @@ html {
         transform: scale(1);
     }
 }
-.projects h2{
-    font-family: "Rubik Wet Paint", serif;
-    color: aqua;
+
+.projects h2 {
     font-family: "Rubik Wet Paint", serif;
     color: #4effff;
+    text-align: center;
+    font-size: 2.5rem;
+    text-shadow: 0 0 10px #4effff, 0 0 20px #00ffff;
+    margin-bottom: 20px;
+    animation: fadeInScale 2s ease-in-out;
 }
 
 .project-card {
-    background: #ddd;
+    background: rgba(255, 255, 255, 0.15); /* Glass effect */
     padding: 20px;
     margin: 10px auto;
     max-width: 400px;
-    border-radius: 5px;
-    box-shadow: 5px 5px 3px #000000;
-    margin-top: 32px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     
     /* Animation on load */
-    animation: fadeInScale 3s ease-in-out;
+    animation: fadeInScale 1.5s ease-in-out;
     
     /* Smooth transition for hover effect */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .project-card:hover {
-    transform: scale(1.05);
-    box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.25);
 }
+
+.project-card h3 {
+    font-size: 1.8rem;
+    color: #ffffff;
+    text-shadow: 0 0 8px #ffffff, 0 0 16px #4effff;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    font-size: 1rem;
+    color: #fff;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.project-card a {
+    display: block;
+
+    margin: 15px auto 0;
+    padding: 10px 20px;
+    background: #6bc2c2;
+    color: #222;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.project-card a:hover {
+    background: #00cccc;
+    color: white;
+}
+
 
 
 /* Contact Form */
@@ -442,6 +596,7 @@ footer {
     color: white;
     text-align: center;
     padding: 10px;
+    border-radius: 10px;
 }
 /* Tablets (max-width: 1024px) */
 @media (max-width: 1024px) {

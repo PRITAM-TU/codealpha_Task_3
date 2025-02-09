@@ -16,7 +16,12 @@
     <header>
         <nav>
             <h2 class="logo">My<span>Portfolio</span></h2>
-            <ul>
+            <div class="menu-toggle" id="menu-toggle">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul id="nav-menu">
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -64,5 +69,14 @@
     </footer>
 
     <script src="script.js"></script>
+    <script> const menuToggle = document.getElementById('menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+    
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+            menuToggle.classList.toggle('open');
+        });
+    </script>
 </body>
+
 </html>
